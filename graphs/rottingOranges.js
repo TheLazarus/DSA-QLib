@@ -14,8 +14,6 @@ function rottingOranges(grid) {
     }
   }
 
-  if (!queue.length) return 0;
-
   const minTime = bfs(queue, visited, grid, m, n);
 
   let areAllOrangesRottenNow = true;
