@@ -1,16 +1,11 @@
 function climbingStairs(n) {
-  let dp = new Array(n + 1).fill(-1);
-  return recurse(n, dp);
+  return recurse(n);
 }
 
-function recurse(n, dp) {
+function recurse(n) {
   if (n <= 1) return 1;
 
-  if (dp[n] !== -1) return dp[n];
-
-  dp[n] = recurse(n - 1, dp) + recurse(n - 2, dp);
-
-  return dp[n];
+  return recurse(n - 1) + recurse(n - 2);
 }
 
-console.log(climbingStairs(44));
+console.log(climbingStairs(100));
