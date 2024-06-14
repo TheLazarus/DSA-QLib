@@ -11,16 +11,14 @@ function longestSubstring(str) {
   let occurences = new Set();
 
   while (j < l && i <= j) {
-    if (!occurences.has(str[j])) {
-      occurences.add(str[j]);
-      max = Math.max(max, j - i + 1);
-      j++;
-    } else {
-      while (occurences.has(str[j])) {
-        occurences.delete(str[i]);
-        i++;
-      }
+    while (occurences.has(str[j])) {
+      occurences.delete(str[i]);
+      i++;
     }
+
+    occurences.add(str[j]);
+    max = Math.max(max, j - i + 1);
+    j++;
   }
 
   return max;
