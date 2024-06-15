@@ -2,7 +2,7 @@ function detectCycle(V, adjList) {
   const visited = new Array(V).fill(false);
   const startingNode = 0;
 
-  dfs(startingNode, -1, visited, adjList);
+  return dfs(startingNode, -1, visited, adjList);
 }
 
 function dfs(node, parent, visited, adjList) {
