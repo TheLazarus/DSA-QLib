@@ -14,7 +14,7 @@ var countGoodSubstrings = function (s) {
     occurences.add(s[j]);
     if (j - i + 1 === 3) {
       count += 1;
-      occurences.delete(s[i]);
+      occurences.delete(s[i]); 
       i++;
       j++;
     } else {
