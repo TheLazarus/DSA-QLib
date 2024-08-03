@@ -19,4 +19,20 @@ var dailyTemperatures = function (temperatures) {
   return ans;
 };
 
-console.log(dailyTemperatures([30,60,90]));
+var dailyTemperaturesOptimized = function (temperatures) {
+  let ans = new Array(temperatures.length).fill(0);
+  let stack = [];
+
+  for (let i = 0; i < temperatures.length; i++) {
+    while (
+      stack.length &&
+      temperatures[i] > temperatures[stack[stack.length - 1]]
+    ) {
+      const topIndex = stack[stack.length - 1];
+      stack.pop();
+      ans[topIndex] = i - topIndex;
+    }
+    stack.push(i);
+  }
+  return ans;
+};
