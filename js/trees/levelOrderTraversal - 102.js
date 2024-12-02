@@ -1,7 +1,7 @@
 var levelOrderTraversal = function (root) {
   if (!root) return [];
 
-  const ans = [[root]];
+  const ans = [];
   const queue = [root];
 
   while (queue.length) {
