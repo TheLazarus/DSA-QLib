@@ -12,10 +12,8 @@ var isSubtree = function (root, subRoot) {
   }
 
   findSubRootOrigins(root);
-  console.log(subRootOrigins);
 
   function checkIfSubroot(node1, node2) {
-    console.log(node1, node2);
     if (node1 === null && node2 === null) return true;
 
     if (
