@@ -23,13 +23,10 @@ var isSubtree = function (root, subRoot) {
     )
       return false;
 
-    const result =
+    return (
       !!checkIfSubroot(node1.left, node2.left) &&
-      !!checkIfSubroot(node1.right, node2.right);
-
-    if (!result) return false;
-
-    return true;
+      !!checkIfSubroot(node1.right, node2.right)
+    );
   }
 
   for (const subRootOrigin of subRootOrigins) {
@@ -39,4 +36,3 @@ var isSubtree = function (root, subRoot) {
   }
   return false;
 };
-
